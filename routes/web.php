@@ -21,6 +21,7 @@ Auth::routes();
 Route::group(['middleware'=>'auth'],function(){
     Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('/notesprivate','NotesController');
+    Route::get('/notesprivate/{notesprivate}/edit2', 'NotesController@edit2')->name('notesprivate.edit2');
 
 
 });

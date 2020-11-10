@@ -15,7 +15,7 @@
 
                 <div class="panel-heading text-center">หน้าหลัก</div>
                 <div class="panel col-md-6 panel-body">
-                    <button class="btn btn-success">Notes Meeting</button>
+                  
                 </div>
                 <div class="panel col-md-6 panel-body">
                     <a href="{{ action('NotesController@index') }}"><button class="btn btn-success">Notes Meeting</button></a>

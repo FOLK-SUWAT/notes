@@ -62,7 +62,7 @@ class NotesController extends Controller
             $note = \App\notes::create(
             ['title' => $request->input('title'),
             'detail' => $request->input('detail'),
-            'imge' => $input['imagename'],
+            'image' => $input['imagename'],
            'idname' => $id,
             ]
         );
@@ -71,7 +71,7 @@ class NotesController extends Controller
         $note = \App\notes::create(
             ['title' => $request->input('title'),
             'detail' => $request->input('detail'),
-            'imge' => "",
+            'image' => "",
            'idname' => $id,
             ]
         );
@@ -101,8 +101,18 @@ class NotesController extends Controller
     public function edit($id)
     {
         $notes = \App\notes::find($id);
+        
         return view('notes-private-edit',['notes'=>$notes]);
     }
+    public function edit2($id)
+    {
+        $notes = \App\notes::find($id);
+        
+      return view('notes-private-view',['notes'=>$notes]);
+    }
+
+
+
 
     /**
      * Update the specified resource in storage.
@@ -141,7 +151,7 @@ class NotesController extends Controller
             $notes ->update(
                 ['title' => $request->input('title'),
                 'detail' => $request->input('detail'),
-                'imge' => $input['imagename'],
+                'image' => $input['imagename'],
                'idname' =>$id,
                 ]
             );
